@@ -1,0 +1,19 @@
+Anotações curso Ionic
+
+- Criar projeto ionic
+	
+	ionic start {nomeProjeto} blank
+	or
+	ionic start {nomeProjeto} sidemenu
+	or
+	ionic start {nomeProjeto} tabs
+
+- criar lista no ionic
+
+	<ion-list>
+		<ion-item>teste 1</ion-item>
+		<ion-item>teste 1</ion-item>
+		<ion-item>teste 1</ion-item>
+		<ion-item>teste 1</ion-item>
+		<ion-item>teste 1</ion-item>
+	</ion-list>
