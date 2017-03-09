@@ -17,3 +17,14 @@ Anotações curso Ionic
 		<ion-item>teste 1</ion-item>
 		<ion-item>teste 1</ion-item>
 	</ion-list>
+
+- criar footer
+	<ion-footer-bar class="bar-stable">
+	</ion-footer-bar>
+
+-comando lab
+	
+	ionic serve --lab
+
+-deixar index limpo
+	separar por view
