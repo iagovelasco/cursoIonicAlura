@@ -1,5 +1,8 @@
 Anotações curso Ionic
 
+
+USAR COMO PADRAO O PROJETO  curso-ionic/font-original/Aula-1
+
 - Criar projeto ionic
 	
 	ionic start {nomeProjeto} blank
