@@ -18,4 +18,9 @@ $stateProvider
 
 	})
 
+	.state('finalizarpedido',{
+		url:'/finalizarpedido/:carro',
+		templateUrl:'templates/finalizarpedido.html',
+		controller:'FinalizarPedidoController'
+	})
 });

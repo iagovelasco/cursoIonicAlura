@@ -1,7 +1,9 @@
 angular.module('starter')
-.controller('ListagemController', function($scope){
-	
-	$scope.listaDeCarros = [{"nome": "BMW 120i", "preco": 70000}];
+.controller('ListagemController', function($scope, CarroService){
+
+	CarroService.obterCarros().then(function(dados){
+		$scope.listaDeCarros = dados;
+	});
 
 	$scope.dataAtual = "01/01/2016";
 
@@ -26,6 +28,42 @@ angular.module('starter')
 
 });
 
+
+angular.module('starter')
+.controller('FinalizarPedidoController', function($stateParams, $scope, $ionicPopup, $state, CarroService){
+	
+	$scope.carroFinalizado = angular.fromJson($stateParams.carro);
+
+	$scope.pedido = {};
+
+	$scope.finalizarPedido = function(){
+
+		var pedidoFinalizado = {
+			params : {
+				carro: $scope.carroFinalizado.nome,
+				preco: $scope.carroFinalizado.preco,
+				nome: $scope.pedido.nome,
+				endereco: $scope.pedido.endereco,
+				email: $scope.pedido.email
+			}
+		}
+
+		CarroService.salvarPedido(pedidoFinalizado).then(function(dados){
+			$ionicPopup.alert({
+				title: 'Parabens',
+				template: 'Você acaba de compra um carro.'
+			}).then(function(){
+				$state.go('listagem');
+			}) ;
+		}, function(erro){
+			$ionicPopup.alert({
+				title: 'Deu Erro',
+				template: 'Campos Obrigatorios'
+			});
+		});
+	}
+
+});
 
 
 
